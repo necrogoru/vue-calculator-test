@@ -20,7 +20,8 @@ export default {
   }
 }
 </script>
-<style>
+<style media="screen">
+
 html {
   font-family: 'Niramit', sans-serif;
 }
@@ -36,10 +37,6 @@ main {
   justify-content: center;
 }
 
-.container{
-  width: 70%;
-  padding: 20px
-}
 
 * {
   margin: 0;
@@ -73,8 +70,17 @@ h1,h2,h3,h4,h5{margin: 5px 0;width: 100%}
 }
 .col{flex-grow: 1}
 
-@media screen and (max-with: 660px) {
-  .container{width: 90%}
+@media only screen and (min-width: 661px) {
+  .container{
+    width: 70%;
+    padding: 20px
+  }
+}
+@media only screen and (max-width: 660px) {
+  .container{
+    width: 97%;
+    padding: 10px
+  }
 }
 .center-align{text-align: center;}
 .center{justify-content: center;}
