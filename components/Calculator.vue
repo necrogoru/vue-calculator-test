@@ -18,25 +18,26 @@
         <div class="col s12">
           <p class="center-align">¿Cómo deseas evaluar tu cŕedito?</p>
           <div class="col s12">
-            <select class="custom-select" id="tipo" v-model="calcSelected">
+            <select class="custom-select center-align" id="tipo" v-model="calcSelected">
               <option v-for="(calculator, id) in calculators" :value="id">{{calculator}}</option>
             </select>
           </div>
         </div>
         <div class="row center">
-          <div class="col s8 l4">
-            <input type="number" placeholder="$1.000.000" v-model="calcParams.money">
+          <div class="col s8 l4 input-field">
+            <span class="fas fa-dollar-sign"></span>
+            <input type="text" placeholder="1.000.000" v-model="moneyWithFormat">
           </div>
         </div>
         <div class="col s12">
           <div class="col s12">
-            <credito :calc-params="calcParams" />
+            <credito :calc-params="calcParams" :money="money" />
           </div>
           <div class="col s12">
-            <cuota :calc-params="calcParams" />
+            <cuota :calc-params="calcParams" :money="money" />
           </div>
           <div class="col s12">
-            <ingresos :calc-params="calcParams" />
+            <ingresos :calc-params="calcParams" :money="money" />
           </div>
         </div>
       </div>
@@ -55,10 +56,11 @@
   export default {
     data() {
       return {
+        // Calculator params
+        moneyWithFormat: null,
         calcParams: {
           interest: 12,
           years: 15,
-          money: 0,
           frechNoVis:0.949346405228758,
           valueIngresos: 3.333333333333330
         },
@@ -68,6 +70,32 @@
           'Cuota a pagar',
           'Mis ingresos personales o familiares'
         ]
+      }
+    },
+    computed: {
+      currentMoney(){
+        return this.moneyWithFormat
+      },
+      money(){
+        if (this.moneyWithFormat) {
+          return parseInt(this.moneyWithFormat.replace( /^\D+/g, ''))
+        } else {
+          return 0
+        }
+      }
+    },
+    methods: {
+      // currency format
+      toCurrency(value) {
+        if (value) {
+          return value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '.')
+        }
+      },
+    },
+    watch: {
+      currentMoney(){
+        // this.moneyWithFormat = this.moneyWithFormat
+        this.moneyWithFormat = this.toCurrency(parseInt(this.moneyWithFormat.replace( /^\D+/g, '')))
       }
     },
     components: {
@@ -138,6 +166,20 @@
   /* helpers */
   .s-radius{
     border-radius: 5px
+  }
+  .input-field > input{
+    width: 80%;
+    box-sizing: border-box;
+    border: 2px solid rgb(201, 201, 201);
+  }
+  .input-field > span{
+    width: 10%;
+    padding: 4px;
+    background-color: rgb(218, 221, 235);
+    box-sizing: border-box;
+    border: 2px solid rgb(201, 201, 201);
+    color: rgb(26, 35, 60);
+    border-radius: 4px 0 0 4px;
   }
   .center{justify-content: center;}
   .custom-select{
