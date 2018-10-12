@@ -3,16 +3,16 @@
     <h1>Cuota</h1>
     <div class="row">
       <div class="col l4">
-        <h5>Crédito estimado</h5>
-        <h1>$ {{toCurrency(credito)}}</h1>
+        <h5 class="center-align">Crédito estimado</h5>
+        <h1 class="center-align">$ {{toCurrency(credito)}}</h1>
       </div>
       <div class="col l4">
-        <h5>Ingresos personales o familiares</h5>
-        <h1>$ {{toCurrency(ingresos)}}</h1>
+        <h5 class="center-align">Ingresos personales o familiares</h5>
+        <h1 class="center-align">$ {{toCurrency(ingresos)}}</h1>
       </div>
       <div class="col l4">
-        <h5>Desceuento FRECH NO VIS</h5>
-        <h1>$ {{toCurrency(descuentoFrech)}}</h1>
+        <h5 class="center-align">Desceuento FRECH NO VIS</h5>
+        <h1 class="center-align">$ {{toCurrency(descuentoFrech)}}</h1>
       </div>
     </div>
   </div>

@@ -68,7 +68,11 @@ h1,h2,h3,h4,h5{margin: 5px 0;width: 100%}
   display: flex;
   flex-direction: column;
 }
-.col{flex-grow: 1}
+.col{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 8px
+}
 
 @media only screen and (min-width: 661px) {
   .container{
