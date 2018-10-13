@@ -63,7 +63,7 @@ main {
   flex-wrap: wrap;
   margin: 20px 0;
 }
-h1,h2,h3,h4,h5{margin: 5px 0;width: 100%}
+h1,h2,h3,h4,h5{margin: 5px 0; padding: 5px; width: 100%}
 .columns{
   display: flex;
   flex-direction: column;

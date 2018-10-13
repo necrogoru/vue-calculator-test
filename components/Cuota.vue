@@ -1,18 +1,23 @@
 <template>
   <div class="row">
-    <h1>Cuota</h1>
+    <p class="center-align" v-show="!money">
+      Por favor ingresa un valor de cuota para calcular.
+    </p>
+    <p class="center-align" v-show="money">
+      Basado en tu cuota <strong>$ {{toCurrency(money)}}</strong> tendrás:
+    </p>
     <div class="row">
-      <div class="col l4">
-        <h5 class="center-align">Crédito estimado</h5>
-        <h1 class="center-align">$ {{toCurrency(credito)}}</h1>
+      <div class="col s12 up-down-margin darken-2 tiny-radius white-text">
+        <h4 class=" thin center-align without-margin">Crédito estimado</h4>
+        <h1 class="center-align without-margin">$ {{toCurrency(credito)}}</h1>
       </div>
-      <div class="col l4">
-        <h5 class="center-align">Ingresos personales o familiares</h5>
-        <h1 class="center-align">$ {{toCurrency(ingresos)}}</h1>
+      <div class="col s12 up-down-margin darken-2 tiny-radius white-text">
+        <h4 class=" thin center-align without-margin">Ingresos personales o familiares</h4>
+        <h1 class="center-align without-margin">$ {{toCurrency(ingresos)}}</h1>
       </div>
-      <div class="col l4">
-        <h5 class="center-align">Desceuento FRECH NO VIS</h5>
-        <h1 class="center-align">$ {{toCurrency(descuentoFrech)}}</h1>
+      <div class="col s12 up-down-margin darken-2 tiny-radius white-text">
+        <h4 class=" thin center-align without-margin">Cuota con descuento FRECH NO VIS</h4>
+        <h1 class="center-align without-margin">$ {{toCurrency(descuentoFrech)}}</h1>
       </div>
     </div>
   </div>
