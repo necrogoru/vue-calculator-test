@@ -21,6 +21,7 @@ export default {
   loading: { color: '#3B8070' },
   // Router Setup
   router: {
+    base: '/calculadora-credito/',
     linkExactActiveClass: 'active'
   },
   /*
