@@ -64,6 +64,10 @@
           <credito :calc-params="calcParams" :money="money" v-show="calcSelected == 0" />
           <cuota :calc-params="calcParams" :money="money" v-show="calcSelected == 1" />
           <ingresos :calc-params="calcParams" :money="money" v-show="calcSelected == 2" />
+
+          <div class="col center">
+            <button type="button" class="white-button s-radius" name="button">Enviar simulación</button>
+          </div>
         </div>
 
       </div>
@@ -539,24 +543,15 @@
   .left-align{text-align: left;}
   .right-align{text-align: right;}
 
-  /* Animations */
-  .calculator-in{
-    animation: fill-down 0.6s ease forwards
+  .white-button{
+    border: 1px dashed #fff;
+    background-color: rgba(230, 230, 230, 0.1);
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
   }
-
-  @keyframes fill-up {
-    0% {
-      opacity: 0;
-      height: 0px
-    }
-    100% {
-      opacity: 0;
-      height: auto
-    }
+  .white-button:hover{
+    background-color: rgba(230, 230, 230, 0.14);
   }
-
-  .calculatorOut{
-
-  }
-
 </style>
