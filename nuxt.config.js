@@ -21,7 +21,7 @@ export default {
   loading: { color: '#3B8070' },
   // Router Setup
   router: {
-    base: '/calculadora-credito/',
+    base: '/vue-calculator-test/',
     linkExactActiveClass: 'active'
   },
   /*
