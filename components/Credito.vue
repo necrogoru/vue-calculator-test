@@ -8,15 +8,15 @@
     </p>
     <div class="row middle">
       <div class="col s12 up-down-margin darken-1 tiny-radius white-text">
-        <h4 class="thin center-align without-margin">La cuota Estimada es</h4>
+        <h4 class="thin center-align without-margin"><span class="fas fa-coins fa-lg"></span>  La cuota Estimada es</h4>
         <h1 class="center-align without-margin">$ {{toCurrency(cuota)}}</h1>
       </div>
       <div class="col s12 up-down-margin darken-1 tiny-radius white-text">
-        <h4 class="thin center-align without-margin">Ingresos personales o familiares</h4>
+        <h4 class="thin center-align without-margin"><span class="fas fa-users fa-lg"></span>  Ingresos personales o familiares</h4>
         <h1 class="center-align without-margin">$ {{toCurrency(ingresos)}}</h1>
       </div>
       <div class="col s12 up-down-margin darken-1 tiny-radius white-text">
-        <h4 class="thin center-align without-margin">Cuota con descuento FRECH NO VIS</h4>
+        <h4 class="thin center-align without-margin"><span class="fas fa-user-tag fa-lg"></span>  Cuota con descuento FRECH NO VIS</h4>
         <h1 class="center-align without-margin">$ {{toCurrency(descuentoFrech)}}</h1>
       </div>
     </div>
